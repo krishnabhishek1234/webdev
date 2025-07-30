@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Input to Button Example</title>
+</head>
+<body>
+
+    <input type="text" id="myInput" value="Type Something">
+    <button onclick="changeToButton()">Change to Button</button>
+
+    <script>
+        function changeToButton() {
+            // Get the input element
+            var inputElement = document.getElementById("myInput");
+
+            // Create a new button element
+            var buttonElement = document.createElement("button");
+
+            // Set attributes for the new button
+            buttonElement.setAttribute("type", "button");
+            buttonElement.setAttribute("onclick", "alert('Button Clicked!')");
+            buttonElement.innerHTML = "Click Me";
+
+            // Replace the input with the new button
+            inputElement.parentNode.replaceChild(buttonElement, inputElement);
+        }
+    </script>
+
+</body>
+</html>
